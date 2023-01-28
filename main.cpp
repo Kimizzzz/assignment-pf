@@ -3,11 +3,21 @@
 #include "includes/display.h"
 #include "includes/helpers.h"
 #include "includes/settingsLogic.h"
-
+#include "includes/Alien.h"
 
 using namespace std;
 
 int main(){
+    Alien a;
+    cout << "Starting life: " << a.getLife() << endl;
+    cout << "Starting attack: " << a.getAttack() << endl;
+
+    // set new values for life and attack
+    a.setLife(50);
+    a.setAttack(25);
+
+    cout << "New life: " << a.getLife() << endl;
+    cout << "New attack: " << a.getAttack() << endl;
     
     clearScreen();
 
@@ -26,6 +36,7 @@ int main(){
         if(choice == '1'){ // play game
             clearScreen();
             drawBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
+            displayAlienAttributes();
             break;
         }
         else if(choice == '2'){ // settings
@@ -48,7 +59,8 @@ int main(){
     }
 
 // to compile 
-// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp -o main
+// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Alien.cpp -o main
+
 
     return 0;
 }

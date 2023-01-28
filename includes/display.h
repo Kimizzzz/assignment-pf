@@ -9,5 +9,7 @@ void settingsDisplay();
 
 void quitGameDisplay();
 
+void displayAlienAttributes();
+
 #endif
 
