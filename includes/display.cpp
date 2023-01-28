@@ -2,7 +2,7 @@
 
 #include "display.h"
 #include "helpers.h"
-
+#include "Alien.h"
 using namespace std;
 
 void mainMenuDisplay(){
@@ -41,3 +41,10 @@ void quitGameDisplay(){
     cout << endl;
 };
 
+void displayAlienAttributes() {
+    Alien a;
+    int life = a.getLife();
+    int attack = a.getAttack();
+    cout << "Alien's life: " << life << endl;
+    cout << "Alien's attack: " << attack << endl;
+}
