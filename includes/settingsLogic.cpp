@@ -130,7 +130,7 @@ void setBoardColumn(int newBoardColumn){
 // check for valid board inputs
 bool boardCheck(int newBoardDimension){
     bool flag;
-    if(newBoardDimension % 2 != 0){
+    if(newBoardDimension % 2 != 0 && newBoardDimension < 8 && newBoardDimension > 0){
         flag = true;
     }else{
         flag = false;
@@ -145,7 +145,7 @@ void boardLogicRow(){
 
     int newBoardRow;
 
-    cout << "Enter New Board Row: " ;
+    cout << "Enter New Board Row (max 7): " ;
     cin >> newBoardRow;
 
     while(cin.fail())
@@ -156,14 +156,14 @@ void boardLogicRow(){
         cout << "Bad entry. Please Enter A Number!  ";
         cout << endl;
         gameBoardDimensionsDisplay();
-        cout << "Enter New Board Row: " ;
+        cout << "Enter New Board Row (max 7): " ;
         cin >> newBoardRow;
     }
     if(boardCheck(newBoardRow)){
         setBoardRow(newBoardRow);
     }else{
         clearScreen();
-        cout << "Please Enter An Odd Number!";
+        cout << "Please Make Sure New Value Is Appropiate!";
         cout << endl;
         boardLogicRow();
     }
@@ -176,7 +176,7 @@ void boardLogicColumn(){
 
     int newBoardColumn;
 
-    cout << "Enter New Board Column: " ;
+    cout << "Enter New Board Column (max 7): " ;
     cin >> newBoardColumn;
 
     while(cin.fail())
@@ -187,14 +187,14 @@ void boardLogicColumn(){
         cout << "Bad entry. Please Enter A Number!  ";
         cout << endl;
         gameBoardDimensionsDisplay();
-        cout << "Enter New Board Column: " ;
+        cout << "Enter New Board Column (max 7): " ;
         cin >> newBoardColumn;
     }
     if(boardCheck(newBoardColumn)){
         setBoardColumn(newBoardColumn);
     }else{
         clearScreen();
-        cout << "Please Enter An Odd Number!";
+        cout << "Please Make Sure New Value Is Appropiate!";
         cout << endl;
         boardLogicColumn();
     }
@@ -214,6 +214,7 @@ void settingsInput(){
         boardLogicRow();
         clearScreen();
         boardLogicColumn();
+        clearScreen();
         settingsDisplay();
         settingsInput();
     }else if (choice == '2'){
@@ -228,6 +229,8 @@ void settingsInput(){
     }else{
         clearScreen();
         cout << "Please Enter A Valid Response!";
+        cout << endl;
+        settingsDisplay();
         settingsInput();
     }
     

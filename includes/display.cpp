@@ -19,7 +19,6 @@ void mainMenuDisplay(){
 };
 
 void settingsDisplay(){
-    clearScreen();
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
     cout << "    |           Settings          |" << endl;
