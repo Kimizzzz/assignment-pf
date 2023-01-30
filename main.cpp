@@ -4,7 +4,7 @@
 #include "includes/helpers.h"
 #include "includes/settingsLogic.h"
 #include "includes/Alien.h"
-#include "includes/board.h"
+#include "includes/Board.h"
 
 using namespace std;
 
@@ -36,7 +36,8 @@ int main(){
 
         if(choice == '1'){ // play game
             clearScreen();
-            createBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
+            Board newGameBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
+            newGameBoard.createBoard();
             displayAlienAttributes();
             break;
         }
@@ -60,7 +61,7 @@ int main(){
     }
 
 // to compile 
-// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/board.cpp includes/Alien.cpp -o main
+// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp -o main
 
 
     return 0;

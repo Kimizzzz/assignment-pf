@@ -1,11 +1,20 @@
-#ifndef SETTINGSLOGIC
-#define SETTINGLOGIC
+#ifndef BOARD
+#define BOARD
 
-#include <string>
+#include <iostream>
 using namespace std;
 
+class Board{
+    
+    public:
 
-void createBoard(int inputRow, int inputColumn);
+        int row;
+        int column;
+        Board(int inputRow, int inputColumn);
+        void createBoard();
 
-
+};
 #endif
+
+
+

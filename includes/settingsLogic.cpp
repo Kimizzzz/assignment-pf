@@ -130,7 +130,7 @@ void setBoardColumn(int newBoardColumn){
 // check for valid board inputs
 bool boardCheck(int newBoardDimension){
     bool flag;
-    if(newBoardDimension % 2 != 0 && newBoardDimension < 8 && newBoardDimension > 0){
+    if(newBoardDimension % 2 != 0 && newBoardDimension > 0){
         flag = true;
     }else{
         flag = false;
@@ -145,7 +145,7 @@ void boardLogicRow(){
 
     int newBoardRow;
 
-    cout << "Enter New Board Row (max 7): " ;
+    cout << "Enter New Board Row: " ;
     cin >> newBoardRow;
 
     while(cin.fail())
@@ -156,7 +156,7 @@ void boardLogicRow(){
         cout << "Bad entry. Please Enter A Number!  ";
         cout << endl;
         gameBoardDimensionsDisplay();
-        cout << "Enter New Board Row (max 7): " ;
+        cout << "Enter New Board Row: " ;
         cin >> newBoardRow;
     }
     if(boardCheck(newBoardRow)){
@@ -176,7 +176,7 @@ void boardLogicColumn(){
 
     int newBoardColumn;
 
-    cout << "Enter New Board Column (max 7): " ;
+    cout << "Enter New Board Column: " ;
     cin >> newBoardColumn;
 
     while(cin.fail())
@@ -187,7 +187,7 @@ void boardLogicColumn(){
         cout << "Bad entry. Please Enter A Number!  ";
         cout << endl;
         gameBoardDimensionsDisplay();
-        cout << "Enter New Board Column (max 7): " ;
+        cout << "Enter New Board Column: " ;
         cin >> newBoardColumn;
     }
     if(boardCheck(newBoardColumn)){
