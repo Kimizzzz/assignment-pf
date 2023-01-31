@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 #include "includes/display.h"
 #include "includes/helpers.h"
@@ -28,25 +29,36 @@ int main(){
 
         mainMenuDisplay();
 
-        char choice;
+        int choice;
 
         cin >> choice;  // gets user input
 
         cout << endl;
 
-        if(choice == '1'){ // play game
+        while(cin.fail())
+        {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            clearScreen();
+            cout << "Bad entry. Please Enter A Number!  ";
+            cout << endl;
+            mainMenuDisplay();
+            cin >> choice;
+        }
+
+        if(choice == 1){ // play game
             clearScreen();
             Board newGameBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
             newGameBoard.createBoard();
             displayAlienAttributes();
             break;
         }
-        else if(choice == '2'){ // settings
+        else if(choice == 2){ // settings
             clearScreen();
             settingsDisplay();
             settingsInput();
         }
-        else if(choice == '3'){ // quit game
+        else if(choice == 3){ // quit game
             clearScreen();
             quitGameDisplay();
             flag = false;

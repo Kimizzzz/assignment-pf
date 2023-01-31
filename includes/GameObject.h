@@ -4,12 +4,13 @@
 class Game_Object{
     
     public:
-        char arrow;
-        char health;
-        char pod;
-        char rock();
-        char empty;
-        char trail;
+
+        static char arrow();
+        static char health();
+        static char pod();
+        static char empty();
+        static char trail();
+        static char rock();
     
 };
 

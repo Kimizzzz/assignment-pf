@@ -28,7 +28,6 @@ void setNewZombieCount(int newZombieCount){
 
 // displays the menu setting to change zombie count
 void zombieCountDisplay(){
-    clearScreen();
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
     cout << "    |       Zombie Settings       |" << endl;
@@ -204,10 +203,22 @@ void boardLogicColumn(){
 
 void settingsInput(){
 
-    char choice;
+    int choice;
     cin >> choice;
 
-    if (choice == '1'){
+    while(cin.fail())
+    {
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        clearScreen();
+        cout << "Bad entry. Please Enter A Number!  ";
+        cout << endl;
+        settingsDisplay();
+        settingsInput();
+        cin >> choice;
+    }
+
+    if (choice == 1){
         clearScreen();
         gameBoardDimensionsDisplay();
         clearScreen();
@@ -217,13 +228,14 @@ void settingsInput(){
         clearScreen();
         settingsDisplay();
         settingsInput();
-    }else if (choice == '2'){
+    }else if (choice == 2){
         clearScreen();
         zombieCountDisplay();
         zombieCountLogic();
+        clearScreen();
         settingsDisplay();
         settingsInput();
-    }else if(choice == '3'){
+    }else if(choice == 3){
         clearScreen();
         return;
     }else{
