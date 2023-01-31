@@ -3,8 +3,7 @@
 #include "GameObject.h"
 
 using namespace std;
-
-char rock(){
-    char rock = 'r';
-    return rock;
+char Game_Object::rock(){
+    return 'p';
 }
+
