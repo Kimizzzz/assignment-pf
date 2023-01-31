@@ -5,7 +5,7 @@
 #include "includes/helpers.h"
 #include "includes/settingsLogic.h"
 #include "includes/Alien.h"
-#include "Board.h"
+#include "includes/Board.h"
 
 using namespace std;
 
@@ -73,7 +73,7 @@ int main(){
     }
 
 // to compile 
-// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
+// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
 
 
     return 0;
