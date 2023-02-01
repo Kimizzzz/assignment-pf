@@ -57,8 +57,6 @@ void displayAlienAttributes() {
     int attack = a.getAttack();
     cout << "Alien's life: " << life << endl;
     cout << "Alien's attack: " << attack << endl;
-    a.addLife(20);
-    cout << "Alien's Life: " << a.getLife() << endl;
 }
 
 // displays the Zombie attributes
