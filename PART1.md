@@ -10,9 +10,10 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 List all the features completed.
 
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Created the main menu and settings menu
+2. Created option for players to change game board dimension
+3. Created option for players to change the zombie count
+4. Able to create the game board with the game objects 
 
 ### To Do
 
@@ -31,10 +32,12 @@ List down the contribution of each group members.
 
 For example:
 
-### Tony Stark
+### Muhammad Azhan Hakimi Bin Zulhani
 
-1. Randomly generate game board.
-2. *add more*
+1. Main menu and setting menu logic
+2. Change game sttings option
+3. Game board
+4. Game objects
 
 ### Steve Rogers
 
@@ -48,4 +51,4 @@ For example:
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+1. Had problem using the system("cls") to clear the console. Using it would make the game buggy, e.g. console output becomes weird and user input would not be read. As such we found a solution in clearing the console using ANSI codes

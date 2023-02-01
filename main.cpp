@@ -10,23 +10,17 @@
 using namespace std;
 
 int main(){
+
     Alien a;
-    cout << "Starting life: " << a.getLife() << endl;
-    cout << "Starting attack: " << a.getAttack() << endl;
-
-    // set new values for life and attack
-    a.setLife(50);
-    a.setAttack(25);
-
-    cout << "New life: " << a.getLife() << endl;
-    cout << "New attack: " << a.getAttack() << endl;
     
     clearScreen();
 
     bool flag = true;
 
-    while(flag){ // game loop
-
+    while(flag){ // sets the game loop
+        
+        setDisplay(); // sets the graphical diaplay of the game
+        clearScreen();
         mainMenuDisplay();
 
         int choice;
@@ -35,7 +29,7 @@ int main(){
 
         cout << endl;
 
-        while(cin.fail())
+        while(cin.fail()) // checks for invalid input by user e.g. a character input by user when supposed to be integer
         {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
@@ -59,6 +53,7 @@ int main(){
             settingsInput();
         }
         else if(choice == 3){ // quit game
+            resetDisplay();
             clearScreen();
             quitGameDisplay();
             flag = false;
@@ -71,10 +66,8 @@ int main(){
         }
         
     }
-
-// to compile 
-// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
-
-
+    resetDisplay();
     return 0;
 }
+// to compile 
+// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main

@@ -5,6 +5,9 @@
 
 using namespace std;
 
+// all of these below are used to create the various game objects
+
+
 char Game_Object::arrow(){
     int randomNumber = (rand() % 4) + 1;
     char arrow;

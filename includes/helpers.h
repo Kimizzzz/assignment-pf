@@ -6,6 +6,10 @@ using namespace std;
 
 void clearScreen();
 
+void setDisplay();
+
+void resetDisplay();
+
 string boardRowCount();
 
 string boardColumnCount();

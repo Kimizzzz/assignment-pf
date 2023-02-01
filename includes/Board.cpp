@@ -5,12 +5,17 @@ using namespace std;
 #include "Board.h"
 #include "GameObject.h"
 
-Board::Board(int inputRow, int inputColumn){
+// creates a Game Board object with attributes of the board's row and column as well as getting its x and y coordinates center point
+
+Board::Board(int inputRow, int inputColumn){ 
     row = (2 * inputRow) + 1;
     column = (4 * inputColumn) + 1;
     xCenter = ceil(column / 2) + 1;
     yCenter = ceil(row / 2) + 1;
 }
+
+
+// creates and gets a random game object
 
 char getRandomObject(){
     int randomNumber = (rand() % 5) + 1;
@@ -35,6 +40,9 @@ char getRandomObject(){
     return gameObject;
 }
 
+
+// this generates a random bool, 1/0 which is used to determine if a particular tile on the board will have a game object or not
+
 char randomBool(){
     char ch;
     int random = (rand() % 10) + 1;
@@ -46,6 +54,8 @@ char randomBool(){
     return ch;
 }
 
+
+// this checks if the passed in number is a whole number or not
 
 bool isWhole(double i){
     double subject = i;
@@ -59,9 +69,15 @@ bool isWhole(double i){
     return flag;
 }
 
+
+// currently this just displays where the Alien is on the board
+
 char Board::alienPos(){
     return 'A';
 }
+
+
+// this creates the game board
 
 void Board::createBoard(){
 
@@ -109,7 +125,6 @@ void Board::createBoard(){
         }
         cout << endl;
     }
-
 }
 
 

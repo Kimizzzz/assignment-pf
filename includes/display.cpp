@@ -5,6 +5,8 @@
 #include "Alien.h"
 using namespace std;
 
+// main menu display
+
 void mainMenuDisplay(){
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
@@ -17,6 +19,9 @@ void mainMenuDisplay(){
     cout << endl;
     cout << "Enter Your Selection: ";
 };
+
+
+// settings display
 
 void settingsDisplay(){
     cout << "                                   " << endl;
@@ -31,14 +36,19 @@ void settingsDisplay(){
     cout << "Enter Your Selection: ";
 };
 
+
+// display for when the player quits the game
+
 void quitGameDisplay(){
-    clearScreen();
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
     cout << "    |    Thank You For Playing!   |" << endl;
     cout << "    =-----------------------------=" << endl;
     cout << endl;
 };
+
+
+// displays the Alien attributes
 
 void displayAlienAttributes() {
     Alien a;

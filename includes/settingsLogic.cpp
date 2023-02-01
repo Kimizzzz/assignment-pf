@@ -9,6 +9,7 @@
 using namespace std;
 
 // gets the current amount of zombie saved
+
 string currentZombieCount(){
     string count;
     string res;
@@ -19,14 +20,18 @@ string currentZombieCount(){
     return res;
 }
 
+
 //sets a new zombie count and saves it
+
 void setNewZombieCount(int newZombieCount){
     ofstream zombieCount("zombieCount.txt");
     zombieCount << newZombieCount;
     zombieCount.close();
 }
 
+
 // displays the menu setting to change zombie count
+
 void zombieCountDisplay(){
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
@@ -41,6 +46,7 @@ void zombieCountDisplay(){
 
 
 // checks if new zombie amount is a sensible amount
+
 bool countCheck(int newZombieCount){
     bool flag;
     if (newZombieCount > 9 || newZombieCount < 1){
@@ -53,6 +59,7 @@ bool countCheck(int newZombieCount){
 
 
 // logic behind how to receive new zombie count intake
+
 void zombieCountLogic(){
 
     int newZombieCount;
@@ -79,7 +86,9 @@ void zombieCountLogic(){
     }
 }
 
+
 // returns the current game board column
+
 string gameBoardColumn(){
     string count;
     string res;
@@ -90,7 +99,9 @@ string gameBoardColumn(){
     return res;
 }
 
+
 // returns the current game board row
+
 string gameBoardRow(){
     string count;
     string res;
@@ -101,18 +112,21 @@ string gameBoardRow(){
     return res;
 }
 
+
 // displays menu to change game board dimensions
+
 void gameBoardDimensionsDisplay(){
     cout << "                                   " << endl;
     cout << "    =-----------------------------=" << endl;
     cout << "    |        Board Settings       |" << endl;
     cout << "    =-----------------------------=" << endl;
     cout << endl;
-
     cout << "Current Board Row --> " << gameBoardRow() << endl << endl;
     cout << "Current Board Column --> " << gameBoardColumn() << endl << endl;
-
 }
+
+
+// sets the new board row
 
 void setBoardRow(int newBoardRow){
     ofstream boardDimensions("boardRow.txt");
@@ -120,13 +134,18 @@ void setBoardRow(int newBoardRow){
     boardDimensions.close();
 }
 
+
+// sets the new column row
+
 void setBoardColumn(int newBoardColumn){
     ofstream boardDimensions("boardColumn.txt");
     boardDimensions << newBoardColumn;
     boardDimensions.close();
 }
 
-// check for valid board inputs
+
+// check for valid board dimensions inputs
+
 bool boardCheck(int newBoardDimension){
     bool flag;
     if(newBoardDimension % 2 != 0 && newBoardDimension > 0){
@@ -137,7 +156,9 @@ bool boardCheck(int newBoardDimension){
     return flag;
 }
 
-// logic to change game board dimensions
+
+// logic to change game board row
+
 void boardLogicRow(){
 
     gameBoardDimensionsDisplay();
@@ -168,7 +189,9 @@ void boardLogicRow(){
     }
 }
 
-// logic to change game board dimensions
+
+// logic to change game board column
+
 void boardLogicColumn(){
 
     gameBoardDimensionsDisplay();
@@ -200,6 +223,7 @@ void boardLogicColumn(){
 }
 
 
+// main setting logic on how to handle user inputs
 
 void settingsInput(){
 

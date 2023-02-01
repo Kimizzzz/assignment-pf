@@ -10,15 +10,17 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 Provide instructions on how to compile your program, especially when it is non-trivial.
 
-For example:
+To compile, run the command into the console or cmd:
 
-```
-g++ main.cpp folder1\code.cpp folder2\code.cpp ......
-```
+g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
 
 ## User Manual
 
 Please provide the user manual on how to use your program.
+
+1. First we have to compile it using the command given above
+2. Run the main.exe file in the terminal or cmd, e.g. ./main.exe
+
 
 Please DO NOT change the Progress Log below. Leave it as it is.
 
@@ -31,8 +33,6 @@ Please DO NOT change the Progress Log below. Leave it as it is.
 
 Please replace the following with your group members' names. 
 
-- Tony Stark
-- Steve Rogers
-- Dr. Strange
+- Muhammad Azhan Hakimi Bin Zulhani
 
 
