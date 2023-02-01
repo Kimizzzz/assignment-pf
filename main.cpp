@@ -6,12 +6,14 @@
 #include "includes/settingsLogic.h"
 #include "includes/Alien.h"
 #include "includes/Board.h"
+#include "includes/Zombie.h"
 
 using namespace std;
 
 int main(){
 
     Alien a;
+    Zombie z;
     
     clearScreen();
 
@@ -45,6 +47,7 @@ int main(){
             Board newGameBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
             newGameBoard.createBoard();
             displayAlienAttributes();
+            displayZombieAttributes();
             break;
         }
         else if(choice == 2){ // settings
@@ -70,4 +73,4 @@ int main(){
     return 0;
 }
 // to compile 
-// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
+// g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp includes/Zombie.cpp -o main
