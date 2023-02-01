@@ -11,5 +11,7 @@ void quitGameDisplay();
 
 void displayAlienAttributes();
 
+void displayZombieAttributes();
+
 #endif
 

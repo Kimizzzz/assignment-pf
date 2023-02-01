@@ -2,7 +2,7 @@
 #include <cstdlib> // for rand() and srand()
 #include <ctime> // for time()
 
-Alien::Alien() {
+Alien::Alien(){
     // seed the random number generator with the current time
     srand(time(0));
 
@@ -25,4 +25,11 @@ int Alien::getLife() {
 
 int Alien::getAttack() {
     return attack;
+}
+
+void Alien::addLife(int newLife) {
+    life += newLife;
+    if (life > 100) {
+        life = 100;
+    }
 }

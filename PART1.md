@@ -14,6 +14,9 @@ List all the features completed.
 2. Created option for players to change game board dimension
 3. Created option for players to change the zombie count
 4. Able to create the game board with the game objects 
+5. Developing game character with their attributes
+6. Able to make Alien class
+7. Able to make Zombie class
 
 ### To Do
 
@@ -39,10 +42,11 @@ For example:
 3. Game board
 4. Game objects
 
-### Steve Rogers
+### Syed Thahir Alhabshi Bin Sayed Ahmad
 
-1. Zombie movement and attack behaviour.
-2. *add more*
+1. Developing Game Character
+2. Alien class
+3. Zombie class
 
 ### Dr. Strange
 

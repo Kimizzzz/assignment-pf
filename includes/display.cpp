@@ -3,6 +3,7 @@
 #include "display.h"
 #include "helpers.h"
 #include "Alien.h"
+#include "Zombie.h"
 using namespace std;
 
 // main menu display
@@ -56,4 +57,16 @@ void displayAlienAttributes() {
     int attack = a.getAttack();
     cout << "Alien's life: " << life << endl;
     cout << "Alien's attack: " << attack << endl;
+    a.addLife(20);
+    cout << "Alien's Life: " << a.getLife() << endl;
+}
+
+// displays the Zombie attributes
+
+void displayZombieAttributes(){
+    Zombie z;
+    cout << "Zombie's Life: " << z.getLife() << endl;
+    cout << "Zombie' Attack: " << z.getAttack() << endl;
+    cout << "Zombie's Range: " << z.getRange() << endl;
+    cout << endl;
 }
