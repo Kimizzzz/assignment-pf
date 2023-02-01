@@ -17,13 +17,13 @@ List all the features completed.
 5. Developing game character with their attributes
 6. Able to make Alien class
 7. Able to make Zombie class
+8. Able to make quit function
 
 ### To Do
 
 List all the features not yet done. Remove this section if there is no incomplete requirements.
 
-1. Cool Feature #1
-2. *add more*
+1. Save and load options
 
 ## Additional Features
 
@@ -48,11 +48,11 @@ For example:
 2. Alien class
 3. Zombie class
 
-### Dr. Strange
+### Muhammad Ismail Bin Suhaini
 
-1. Implement all game objects.
-2. *add more*
+1. Quit function
 
 ## Problems Encountered & Solutions
 
 1. Had problem using the system("cls") to clear the console. Using it would make the game buggy, e.g. console output becomes weird and user input would not be read. As such we found a solution in clearing the console using ANSI codes
+2. Unable to complete save and load options because don't know how to apply C++ I/O Files knowledge to it. Will watch more guides ont this and understand the program properly

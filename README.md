@@ -12,7 +12,7 @@ Provide instructions on how to compile your program, especially when it is non-t
 
 To compile, run the command into the console or cmd:
 
-g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp -o main
+g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp includes/saveLoadQuit.cpp -o main
 
 ## User Manual
 
@@ -35,5 +35,6 @@ Please replace the following with your group members' names.
 
 - Muhammad Azhan Hakimi Bin Zulhani
 - Syed Thahir Alhabshi Bin Sayed Ahmad
+- Muhammad Ismail Bin Suhaini
 
 
