@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+[Video Demo](https://youtu.be/fxl4hhwuUqY).
 
 ## Minimum Requirements
 
@@ -20,8 +20,6 @@ List all the features completed.
 8. Able to make quit function
 
 ### To Do
-
-List all the features not yet done. Remove this section if there is no incomplete requirements.
 
 1. Save and load options
 2. Create game flow

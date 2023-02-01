@@ -6,7 +6,7 @@ A text-based game based on 'Alien Path' named ALIEN VS ZOMBIES
 
 You may add one signature screenshot of your program here or above the title. Check out [this tutorial](https://www.digitalocean.com/community/tutorials/markdown-markdown-images) to learn how to do it.
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+[Video Demo](https://youtu.be/fxl4hhwuUqY).
 
 ## Compilation Instructions
 
