@@ -24,6 +24,9 @@ List all the features completed.
 List all the features not yet done. Remove this section if there is no incomplete requirements.
 
 1. Save and load options
+2. Create game flow
+3. Make characters movement
+4. Make game objects have its attributes
 
 ## Additional Features
 
