@@ -11,14 +11,20 @@
 #include "Alien.h"
 #include <cstdlib> // for rand() and srand()
 #include <ctime> // for time()
+#include <iostream>
+#include "helpers.h"
 
-Alien::Alien(){
+Alien::Alien(int xCenter, int yCenter){
     // seed the random number generator with the current time
     srand(time(0));
 
     // set life and attack to random values between 1 and 100
     life = rand() % 100 + 1;
     attack = 0;
+    
+    // sets Alien x position and Y position
+    alienXPos = xCenter;
+    alienYPos = yCenter;
 }
 
 void Alien::setLife(int newLife) {
@@ -43,3 +49,11 @@ void Alien::addLife(int newLife) {
         life = 100;
     }
 }
+
+void Alien::displayAlienAttributes() {
+    indent3();
+    cout << "Alien's Life: " << life;
+    cout << "  |  ";
+    cout << "Alien's Attack: " << attack << endl;
+}
+

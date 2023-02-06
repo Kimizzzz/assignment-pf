@@ -21,9 +21,6 @@
 using namespace std;
 
 int main(){
-
-    Alien a;
-    Zombie z;
     
     clearScreen();
 
@@ -54,10 +51,58 @@ int main(){
 
         if(choice == 1){ // play game
             clearScreen();
-            Board newGameBoard(stoi(boardRowCount()), stoi(boardColumnCount()));
-            newGameBoard.createBoard();
-            displayAlienAttributes();
-            displayZombieAttributes();
+
+            // create necessary variables
+            int gameBoardRow = stoi(boardRowCount());
+            int gameBoardColumn = stoi(boardColumnCount());
+            const int zombieCount = stoi(getZombieCount());
+
+            // creates a Board object
+            Board newGameBoard(gameBoardRow, gameBoardColumn);
+
+            // creates an array of Zombie class instances
+            Zombie zombie[zombieCount];
+            for(int i = 1; i < zombieCount + 1; i++)
+            {
+                zombie[i];
+            }
+            
+            // initializes an array of Zombie positions            
+            int zombiePosArr[zombieCount][2];
+
+            // fills in the array of Zombie positions
+            setZombiePos(zombiePosArr, zombieCount, gameBoardRow, gameBoardColumn);
+
+            // assigns each created Zombie their respective x position and y position
+            for(int i = 1; i < zombieCount + 1; i++){
+                for(int j = 0; j < 1; j++){
+                    zombie[i].xPos = zombiePosArr[i - 1][j];
+                    zombie[i].yPos = zombiePosArr[i - 1][j + 1];
+                }
+            }
+
+            // creates a new gameboard
+            newGameBoard.createBoard(zombiePosArr, zombieCount);
+            
+            // reassigns each Zombie char 'Z' with their respective number based on their positions
+            for(int i = 1; i < zombieCount + 1; i++){
+                for(int j = 0; j < 1; j++){
+                    newGameBoard.paintBoard(zombie[i].xPos, zombie[i].yPos, i);
+                }
+            }
+            
+            // draws the final gameboard
+            newGameBoard.drawBoard();
+            
+            cout << endl;
+            
+            // displays zombie attributes
+            for(int i = 1; i < zombieCount + 1; i++){
+                for(int j = 0; j < 1; j++){
+                    zombie[i].displayZombieAttributes(i);
+                }
+            }
+            cout << endl;
             break;
         }
         else if(choice == 2){ // settings

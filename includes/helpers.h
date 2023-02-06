@@ -20,9 +20,26 @@ void setDisplay();
 
 void resetDisplay();
 
+void indent15();
+
+void indent6();
+
+void indent10();
+
+void indent17();
+
+void indent3();
+
 string boardRowCount();
 
 string boardColumnCount();
+
+string  getZombieCount();
+
+string prompt();
+
+int setZombiePos(int arr[][2], int, int, int);
+
 
 
 #endif

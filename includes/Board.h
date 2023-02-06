@@ -27,8 +27,12 @@ class Board{
         Board(int inputRow, int inputColumn); 
 
         // member functions
-        void createBoard();
+        char createBoard(int[][2], int);
+        void paintBoard(int, int, int);
+        void drawBoard();
+        void updateBoard(int alienXPos, int alienYPos);
         char alienPos();
+        char zombiePos();
 
 };
 #endif

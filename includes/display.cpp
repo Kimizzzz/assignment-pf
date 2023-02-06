@@ -19,15 +19,23 @@ using namespace std;
 // main menu display
 
 void mainMenuDisplay(){
-    cout << "                                   " << endl;
+    cout << "\x1b[?251";
+    cout << endl;
+    indent6();
     cout << "    =-----------------------------=" << endl;
+    indent6();
     cout << "    |       Alien VS Zombies      |" << endl;
+    indent6();
     cout << "    =-----------------------------=" << endl;
     cout << endl;
+    indent3();
     cout << "(1) Start" << endl;
+    indent3();
     cout << "(2) Settings" << endl;
+    indent3();
     cout << "(3) Quit" << endl;
     cout << endl;
+    indent3();
     cout << "Enter Your Selection: ";
 };
 
@@ -35,15 +43,22 @@ void mainMenuDisplay(){
 // settings display
 
 void settingsDisplay(){
-    cout << "                                   " << endl;
+    cout << endl;
+    indent6();
     cout << "    =-----------------------------=" << endl;
+    indent6();
     cout << "    |           Settings          |" << endl;
+    indent6();
     cout << "    =-----------------------------=" << endl;
     cout << endl;
+    indent3();
     cout << "(1) Change Board Dimension" << endl;
+    indent3();
     cout << "(2) Change Zombie Count" << endl;
+    indent3();
     cout << "(3) Back" << endl;
     cout << endl;
+    indent3();
     cout << "Enter Your Selection: ";
 };
 
@@ -59,22 +74,4 @@ void quitGameDisplay(){
 };
 
 
-// displays the Alien attributes
 
-void displayAlienAttributes() {
-    Alien a;
-    int life = a.getLife();
-    int attack = a.getAttack();
-    cout << "Alien's life: " << life << endl;
-    cout << "Alien's attack: " << attack << endl;
-}
-
-// displays the Zombie attributes
-
-void displayZombieAttributes(){
-    Zombie z;
-    cout << "Zombie's Life: " << z.getLife() << endl;
-    cout << "Zombie' Attack: " << z.getAttack() << endl;
-    cout << "Zombie's Range: " << z.getRange() << endl;
-    cout << endl;
-}

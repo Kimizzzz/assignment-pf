@@ -19,9 +19,6 @@ void settingsDisplay();
 
 void quitGameDisplay();
 
-void displayAlienAttributes();
-
-void displayZombieAttributes();
 
 #endif
 

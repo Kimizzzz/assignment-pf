@@ -19,6 +19,8 @@ class Zombie {
         int attack;
         int range;
     public:
+        int xPos;
+        int yPos;
         Zombie(); // Default constructor
         Zombie(int, int, int, Board); // Additional constructor
         void setLife(int);
@@ -27,6 +29,7 @@ class Zombie {
         int getLife();
         int getAttack();
         int getRange();
+        void displayZombieAttributes(int);
         
 };
 

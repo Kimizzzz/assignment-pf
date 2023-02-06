@@ -10,6 +10,7 @@
 
 #include "Zombie.h"
 #include "Board.h"
+#include "helpers.h"
 #include <iostream>
 
 
@@ -50,4 +51,16 @@ int Zombie::getAttack() {
 
 int Zombie::getRange() {
     return range;
+}
+
+
+void Zombie::displayZombieAttributes(int number){
+    indent3();
+    cout << "Zombie " << number << " =>  ";
+    cout << "Life: " << life << " | ";
+    cout << "Attack: " << attack << " | ";
+    cout << "Range: " << range << " | ";
+    cout << "Row: " << yPos / 2 << " | ";
+    cout << "Column: " << (xPos + 1) / 4 << endl;
+    cout << endl;
 }

@@ -21,12 +21,15 @@ class Alien {
         std::uniform_int_distribution<int> distribution;
 
     public:
-        Alien(); // constructor
+        int alienXPos;
+        int alienYPos;
+        Alien(int, int); // constructor
         void setLife(int);
         void setAttack(int);
         int getLife();
         int getAttack();
         void addLife(int life);
+        void displayAlienAttributes();
 };
 
 #endif

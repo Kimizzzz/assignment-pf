@@ -32,7 +32,7 @@ char Game_Object::arrow(){
             arrow = '>';
             break;
         case 4:
-            arrow = 25;
+            arrow = 'V';
             break;
     }
     return arrow;
