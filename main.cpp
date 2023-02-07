@@ -60,6 +60,9 @@ int main(){
             // creates a Board object
             Board newGameBoard(gameBoardRow, gameBoardColumn);
 
+            // creates an Alien instance
+            Alien myAlien(newGameBoard.xCenter, newGameBoard.yCenter);
+
             // creates an array of Zombie class instances
             Zombie zombie[zombieCount];
             for(int i = 1; i < zombieCount + 1; i++)
@@ -90,10 +93,17 @@ int main(){
                     newGameBoard.paintBoard(zombie[i].xPos, zombie[i].yPos, i);
                 }
             }
+
+            cout << endl;
             
             // draws the final gameboard
             newGameBoard.drawBoard();
             
+            cout << endl;
+
+            // displays Alien attributes
+            myAlien.displayAlienAttributes();
+
             cout << endl;
             
             // displays zombie attributes
