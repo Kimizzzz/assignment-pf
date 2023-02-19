@@ -15,6 +15,7 @@
 #include <iostream>
 #include "helpers.h"
 #include "Board.h"
+#include "GameObject.h"
 
 Alien::Alien(int xCenter, int yCenter){
     // seed the random number generator with the current time
@@ -87,3 +88,31 @@ int Alien::alienRightMove(int xPos){
     return xPos;
 }
 
+// Method to handle collision with a health pod
+void Alien::collisionWithHealth() {
+int healthToAdd = 20 ; // Add between 1 and 5 health points
+addLife(healthToAdd);
+cout << "Alien collided with a health pod and gained " << healthToAdd << " life points!" << endl;
+}
+
+// add a new method to handle alien collision with game objects
+
+void Alien::collisionWith(Game_Object& gameObject) {
+    char objectType = gameObject.getType();
+    switch (objectType) {
+        case 'h': // health pod
+            collisionWithHealth();
+            break;
+        case '^': // arrow
+            // do something if alien collides with an arrow
+            break;
+        case 'r': // rock
+            // do something if alien collides with a rock
+            break;
+        case 'p': // pod
+            // do something if alien collides with a pod
+            break;
+        default:
+            break;
+    }
+}

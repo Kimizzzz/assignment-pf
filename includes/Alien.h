@@ -14,6 +14,7 @@
 #include <random>
 #include <string>
 #include "Zombie.h"
+#include "GameObject.h"
 using namespace std;
 
 class Alien {
@@ -33,6 +34,8 @@ class Alien {
         int getAttack();
         void addLife(int life);
         void displayAlienAttributes();
+        void collisionWithHealth();
+        void collisionWith(Game_Object& gameObject);
 
         void receiveAttack(Zombie& zombie); // method to handle the zombie attack
 
