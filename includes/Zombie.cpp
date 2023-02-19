@@ -13,12 +13,15 @@
 #include "Alien.h"
 #include "helpers.h"
 #include <iostream>
+#include <string>
+using namespace std;
 
 
 Zombie::Zombie() {
     life = rand() % 100 + 1;
     attack = rand() % life + 1;
     range = rand() % 10 + 1;
+    status = "alive";
 }
 Zombie::Zombie(int inputLife, int inputAttack, int inputRange, Board board) {
     life = inputLife;

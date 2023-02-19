@@ -11,6 +11,9 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
+#include <string>
+using namespace std;
+
 class Board;
 class Alien;
 
@@ -22,6 +25,7 @@ class Zombie {
         int life;
         int xPos;
         int yPos;
+        string status;
         Zombie(); // Default constructor
         Zombie(int, int, int, Board); // Additional constructor
         void setLife(int);

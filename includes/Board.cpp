@@ -328,23 +328,30 @@ void Board::resetBoard(){
 
 
 int Board::checkZombie(int xPos, int yPos){
+
+    char zombieNum = gameBoard[yPos][xPos];
+
+    return zombieNum;
+}
+
+
+void Board::removeZombie(int zombieNum){
+
     int gameBoardRow = stoi(boardRowCount());
     int gameBoardColumn = stoi(boardColumnCount());
 
     int row = (gameBoardRow * 2) + 1;
     int column = (gameBoardColumn * 4) + 1;
 
-    char zombieNum = gameBoard[yPos][xPos];
-
-    // for(int i = 1; i <= row; i++){
-    //     for(int j = 1; j <= column; j++){
-
-            
-
-    //     }
-    // }
-
-    return zombieNum;
+    char ch = zombieNum + '0';
+    
+    for(int i = 1; i <= row; i++){
+        for(int j = 1; j <= column; j++){
+            if(gameBoard[i][j] == ch){
+                gameBoard[i][j] = Game_Object::empty();
+            }
+        }
+    }
 }
 
 
