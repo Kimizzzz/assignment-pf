@@ -42,19 +42,6 @@ List down the contribution of each group members.
 
 ### Muhammad Azhan Hakimi Bin Zulhani
 
-1. Settings
-2. Game board
-3. Game objects
-4. Game flow
-
-### Syed Thahir Alhabshi Bin Sayed Ahmad
-
-1. Game characters
-2. Zombie's attributes and number
-3. Movement of zombie and alien
-
-### Muhammad Azhan Hakimi Bin Zulhani
-
 1. Made alien movement
 2. Made zombie movement
 3. Made a win lose condition
