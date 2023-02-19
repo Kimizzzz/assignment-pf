@@ -63,6 +63,18 @@ int main(){
             // creates an Alien instance
             Alien myAlien(newGameBoard.xCenter, newGameBoard.yCenter);
 
+            // simulate a collision with a health pod
+            myAlien.collisionWithHealth();
+
+            // simulate a collision with arrow
+            myAlien.collisionWithArrow('^');
+            myAlien.collisionWithArrow('v');
+            myAlien.collisionWithArrow('<');
+            myAlien.collisionWithArrow('>');
+
+            // simulate a collision with rock
+            myAlien.collisionWithRock();
+
             // creates an array of Zombie class instances
             Zombie zombie[zombieCount + 1];
             for(int i = 1; i < zombieCount + 1; i++)

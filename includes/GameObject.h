@@ -23,6 +23,10 @@ class Game_Object{
         static char rock();
 
         virtual char getType() = 0;
+        virtual int  getXPos() const;
+        virtual int  getYPos() const;
+        virtual int  getWidth() = 0;  // add a getWidth() member function
+        virtual int  getHeight() = 0;
     
 };
 

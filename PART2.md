@@ -37,10 +37,12 @@ For example:
 2. Made zombie movement
 3. Made a win lose condition
 
-### Steve Rogers
+### Syed Thahir Alhabshi
 
-1. Zombie movement and attack behaviour.
-2. *add more*
+1. create a function on what will happen if alien hit a rock
+2. create a function on what will happen if alien hit a health pod
+3. create a function on what will happen if alien hit a arrow
+4. Make zombie able to attack alien when in range
 
 ### Dr. Strange
 
