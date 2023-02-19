@@ -23,7 +23,7 @@ Alien::Alien(int xCenter, int yCenter){
 
     // set life and attack to random values between 1 and 100
     life = rand() % 100 + 1;
-    attack = 200;
+    attack = 0;
     
     // sets Alien x position and Y position
     alienXPos = xCenter;
@@ -90,24 +90,74 @@ int Alien::alienRightMove(int xPos){
 
 // Method to handle collision with a health pod
 void Alien::collisionWithHealth() {
-int healthToAdd = 20 ; // Add between 1 and 5 health points
+int healthToAdd = 20 ; 
 addLife(healthToAdd);
 cout << "Alien collided with a health pod and gained " << healthToAdd << " life points!" << endl;
 }
 
-// add a new method to handle alien collision with game objects
+void Alien::collisionWithArrow(char arrowDirection){
+    // update alien's attack by adding 20
+        attack += 20;
+    switch(arrowDirection){
+        case '^': // up arrow
+            alienYPos = alienUpMove(alienYPos);
+            break;
+        case 'v': // down arrow
+            alienYPos = alienDownMove(alienYPos);
+            break;
+        case '<': // left arrow
+            alienXPos = alienLeftMove(alienXPos);
+            break;
+        case '>': // right arrow
+            alienXPos = alienRightMove(alienXPos);
+            break;
+    }
+}
 
+// Method to handle collision with a rock
+void Alien::collisionWithRock() {
+    // Stop the Alien's movement
+    alienXPos = alienXPos;
+    alienYPos = alienYPos;
+    cout << "Alien collided with a rock and stopped moving!" << endl;
+}
+
+bool Alien::checkCollision(Game_Object& obj1, Game_Object& obj2) {
+    int obj1XPos = obj1.getXPos();
+    int obj1YPos = obj1.getYPos();
+    int obj1Width = obj1.getWidth();
+    int obj1Height = obj1.getHeight();
+
+    int obj2XPos = obj2.getXPos();
+    int obj2YPos = obj2.getYPos();
+    int obj2Width = obj2.getWidth();
+    int obj2Height = obj2.getHeight();
+
+    if (obj1XPos + obj1Width >= obj2XPos && obj1XPos <= obj2XPos + obj2Width &&
+        obj1YPos + obj1Height >= obj2YPos && obj1YPos <= obj2YPos + obj2Height) {
+        return true; // collision detected
+    } else {
+        return false; // no collision
+    }
+}
+
+
+
+// add a new method to handle alien collision with game objects
 void Alien::collisionWith(Game_Object& gameObject) {
     char objectType = gameObject.getType();
     switch (objectType) {
         case 'h': // health pod
             collisionWithHealth();
             break;
-        case '^': // arrow
-            // do something if alien collides with an arrow
+        case '^': // arrow pointing up
+        case 'v': // arrow pointing down
+        case '<': // arrow pointing left
+        case '>': // arrow pointing right
+            collisionWithArrow(objectType);
             break;
         case 'r': // rock
-            // do something if alien collides with a rock
+            collisionWithRock();
             break;
         case 'p': // pod
             // do something if alien collides with a pod

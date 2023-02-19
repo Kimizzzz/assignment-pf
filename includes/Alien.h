@@ -36,6 +36,10 @@ class Alien {
         void displayAlienAttributes();
         void collisionWithHealth();
         void collisionWith(Game_Object& gameObject);
+        void collisionWithArrow(char arrowDirection);
+        void collisionWithRock();
+        bool checkCollision(Game_Object& object1, Game_Object& object2); // new function for collision detection
+
 
         void receiveAttack(Zombie& zombie); // method to handle the zombie attack
 
