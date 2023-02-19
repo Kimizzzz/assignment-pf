@@ -21,6 +21,8 @@ class Game_Object{
         static char empty();
         static char trail();
         static char rock();
+
+        virtual char getType() = 0;
     
 };
 
