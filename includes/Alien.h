@@ -30,6 +30,7 @@ class Alien {
         int getAttack();
         void addLife(int life);
         void displayAlienAttributes();
+        void receiveAttack(Zombie& zombie); // method to handle the zombie attack
 };
 
 #endif
