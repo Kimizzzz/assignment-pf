@@ -10,9 +10,9 @@
 
 List all the features completed.
 
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Added alien movement
+2. Added zombie movement
+3. Made a win lose condition
 
 ### To Do
 
@@ -31,10 +31,11 @@ List down the contribution of each group members.
 
 For example:
 
-### Tony Stark
+### Muhammad Azhan Hakimi Bin Zulhani
 
-1. Randomly generate game board.
-2. *add more*
+1. Made alien movement
+2. Made zombie movement
+3. Made a win lose condition
 
 ### Steve Rogers
 

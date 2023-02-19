@@ -347,7 +347,6 @@ int main(){
                     goto winCon;
                 }
 
-
                 // zombie takes turn moving
 
                 for(int i = 1; i < zombieCount + 1; i++){
@@ -412,15 +411,13 @@ int main(){
                         }
                         cout << endl << endl;
 
-                        ////////////////////////////////////////
+
                         // zombie checks if it can attack alien
                         zombie[i].attackAlien(myAlien, ch);
 
 
-                        ////////////////////////////////////////
 
 
-                        ////////////////////////////////////////
                         // checks if alien is still alive
                         if(myAlien.life <= 0){
                             gameOver = true;
@@ -433,7 +430,6 @@ int main(){
 
                             break;
                         }
-                        //////////////////////////////////////// 
                     }else{
                         clearScreen();
                         cout << endl;
@@ -503,3 +499,5 @@ int main(){
 }
 // to compile 
 // g++ main.cpp includes/display.cpp includes/helpers.cpp includes/settingsLogic.cpp includes/Board.cpp includes/Alien.cpp includes/GameObject.cpp includes/Zombie.cpp includes/saveLoadQuit.cpp -o main
+
+
