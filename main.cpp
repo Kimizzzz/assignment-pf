@@ -147,23 +147,76 @@ int main(){
                     int yLimit = (gameBoardRow * 2) + 1;
                     while(myAlien.alienYPos > 2){
                         myAlien.alienYPos = Alien::alienUpMove(myAlien.alienYPos);
+
+
+                        ///////////////////////////////
+                        // checks if collide with a zombie
+                        if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
+                            myAlien.alienYPos = myAlien.alienYPos + 2;
+                            cout << endl;
+                            indent3();
+                            cout << "Crashes!!" << endl;
+                            cout << endl;
+                            indent3();
+                            system("pause");
+                            break;
+                        }
                         Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+
+
                     }
                 }else if(choice == "down"){
                     int yLimit = (gameBoardRow * 2) + 1;
                     while(myAlien.alienYPos < yLimit - 2){
                         myAlien.alienYPos = Alien::alienDownMove(myAlien.alienYPos);
+
+                        ///////////////////////////////
+                        // checks if collide with a zombie
+                        if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
+                            myAlien.alienYPos = myAlien.alienYPos - 2;
+                            cout << endl;
+                            indent3();
+                            cout << "Crashes!!" << endl;
+                            cout << endl;
+                            indent3();
+                            system("pause");
+                            break;
+                        }
                         Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
                     }
                 }else if(choice == "left"){
                     while(myAlien.alienXPos > 3){
                         myAlien.alienXPos = Alien::alienLeftMove(myAlien.alienXPos);
+                        ///////////////////////////////
+                        // checks if collide with a zombie
+                        if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
+                            myAlien.alienXPos = myAlien.alienXPos + 4;
+                            cout << endl;
+                            indent3();
+                            cout << "Crashes!!" << endl;
+                            cout << endl;
+                            indent3();
+                            system("pause");
+                            break;
+                        }
                         Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
                     }
                 }else if(choice == "right"){
                     int xLimit = (gameBoardColumn * 4) + 1;
                     while(myAlien.alienXPos < xLimit - 2){
                         myAlien.alienXPos = Alien::alienRightMove(myAlien.alienXPos);
+                        ///////////////////////////////
+                        // checks if collide with a zombie
+                        if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
+                            myAlien.alienXPos = myAlien.alienXPos - 4;
+                            cout << endl;
+                            indent3();
+                            cout << "Crashes!!" << endl;
+                            cout << endl;
+                            indent3();
+                            system("pause");
+                            break;
+                        }
                         Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
                     }
                     
@@ -217,7 +270,7 @@ int main(){
 
                     if(axis == 1){ // zombie moves along the X axis
                         clearScreen();
-                        zombie[i].xPos = Zombie::randomXChange(zombie[i].xPos, zombie[i].yPos, alienXPos, alienYPos, myArrX, myArrY);  // moves the zombie left, right or no movement
+                        zombie[i].xPos = Zombie::randomXChange(zombie[i].xPos, zombie[i].yPos, myAlien.alienXPos, myAlien.alienYPos, myArrX, myArrY);  // moves the zombie left, right or no movement
                         newGameBoard.updateZombiePos(zombie[i].xPos, zombie[i].yPos, ch);  // updates the new zombie position to the gameboard
                         cout << endl;
                         newGameBoard.drawBoard(); // draws the gameboard
@@ -235,7 +288,7 @@ int main(){
                         
                     }else if(axis == 2){ // zombie moves along the Y axis
                         clearScreen();
-                        zombie[i].yPos = Zombie::randomYChange(zombie[i].xPos, zombie[i].yPos,alienXPos, alienYPos, myArrX, myArrY);  // moves the zombie up, down or no movement
+                        zombie[i].yPos = Zombie::randomYChange(zombie[i].xPos, zombie[i].yPos, myAlien.alienXPos, myAlien.alienYPos, myArrX, myArrY);  // moves the zombie up, down or no movement
                         newGameBoard.updateZombiePos(zombie[i].xPos, zombie[i].yPos, ch);  // updates the new zombie position to the gameboard
                         cout << endl;
                         newGameBoard.drawBoard();  // draws the gameboard

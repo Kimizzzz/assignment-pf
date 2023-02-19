@@ -35,6 +35,7 @@ class Board{
         char zombiePos();
 
         void updateZombiePos(int, int, char);
+        static bool checkBoard(int, int);
 
         static void alienTrail(int, int);
         void resetBoard();

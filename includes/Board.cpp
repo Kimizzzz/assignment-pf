@@ -263,6 +263,35 @@ void Board::updateZombiePos(int xPos, int yPos, char zombieChar){
 }
 
 
+bool Board::checkBoard(int xPos, int yPos){
+    int gameBoardRow = stoi(boardRowCount());
+    int gameBoardColumn = stoi(boardColumnCount());
+
+    int row = (gameBoardRow * 2) + 1;
+    int column = (gameBoardColumn * 4) + 1;
+
+    bool flag;
+
+    for(int i = 1; i <= row; i++){
+        for(int j = 1; j <= column; j++){
+
+            char currentItem = gameBoard[yPos][xPos];
+            char zombieChar[9] = {'1','2','3','4','5','6','7','8','9'};
+            for(int k = 0; k < 9; k++){
+                if(currentItem == zombieChar[k]){
+                        flag = true;
+                        goto endLoop;
+                    }else{
+                        flag = false;
+                }
+            }
+        }
+    }
+    endLoop:
+    return flag;
+}
+
+
 
 void Board::alienTrail(int alienXPos, int alienYPos){ // draws new alien pos and alien trail
 
