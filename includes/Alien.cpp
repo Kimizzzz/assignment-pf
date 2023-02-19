@@ -14,6 +14,7 @@
 #include <ctime> // for time()
 #include <iostream>
 #include "helpers.h"
+#include "Board.h"
 
 Alien::Alien(int xCenter, int yCenter){
     // seed the random number generator with the current time
@@ -58,10 +59,31 @@ void Alien::displayAlienAttributes() {
     cout << "Alien's Attack: " << attack << endl;
 }
 
+
 void Alien::receiveAttack(Zombie& zombie) {
     int distance = abs(alienXPos - zombie.xPos) + abs(alienYPos - zombie.yPos);
     if (distance <= zombie.getRange()) {
         life -= zombie.getAttack();
     }
+}
+
+int Alien::alienUpMove(int yPos){
+    yPos = yPos - 2;
+    return yPos;
+}
+
+int Alien::alienDownMove(int yPos){
+    yPos = yPos + 2;
+    return yPos;
+}
+
+int Alien::alienLeftMove(int xPos){
+    xPos = xPos - 4;
+    return xPos;
+}
+
+int Alien::alienRightMove(int xPos){
+    xPos = xPos + 4;
+    return xPos;
 }
 

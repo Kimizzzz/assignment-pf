@@ -139,14 +139,56 @@ int main(){
                 }
                 cout << endl;
 
-                // alien moves
-                indent3();
-                cout << "Alien has moved" << endl;
+
+                // receives player command
+
+                string choice = prompt();
+                if(choice == "up"){
+                    int yLimit = (gameBoardRow * 2) + 1;
+                    while(myAlien.alienYPos > 2){
+                        myAlien.alienYPos = Alien::alienUpMove(myAlien.alienYPos);
+                        Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+                    }
+                }else if(choice == "down"){
+                    int yLimit = (gameBoardRow * 2) + 1;
+                    while(myAlien.alienYPos < yLimit - 2){
+                        myAlien.alienYPos = Alien::alienDownMove(myAlien.alienYPos);
+                        Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+                    }
+                }else if(choice == "left"){
+                    while(myAlien.alienXPos > 3){
+                        myAlien.alienXPos = Alien::alienLeftMove(myAlien.alienXPos);
+                        Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+                    }
+                }else if(choice == "right"){
+                    int xLimit = (gameBoardColumn * 4) + 1;
+                    while(myAlien.alienXPos < xLimit - 2){
+                        myAlien.alienXPos = Alien::alienRightMove(myAlien.alienXPos);
+                        Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+                    }
+                    
+                }else{
+                    gameOver = true;
+                    break;
+                }
+
+                clearScreen();
+                cout << endl;
+                // Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
+                newGameBoard.drawBoard();
+                cout << endl;
+                newGameBoard.resetBoard();
+
+                myAlien.displayAlienAttributes();
+                cout << endl;
+                for(int i = 1; i < zombieCount + 1; i++){
+                    for(int j = 0; j < 1; j++){
+                        zombie[i].displayZombieAttributes(i);
+                    }
+                }
                 cout << endl;
                 indent3();
                 system("pause");
-                cout << endl;
-                // code to make alien move goes here, to be added
 
 
                 // zombie takes turn moving

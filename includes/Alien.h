@@ -12,6 +12,8 @@
 #define ALIEN_H
 
 #include <random>
+#include <string>
+using namespace std;
 
 class Alien {
     private:
@@ -30,7 +32,14 @@ class Alien {
         int getAttack();
         void addLife(int life);
         void displayAlienAttributes();
+
         void receiveAttack(Zombie& zombie); // method to handle the zombie attack
+
+        static int alienUpMove(int);
+        static int alienDownMove(int);
+        static int alienLeftMove(int);
+        static int alienRightMove(int);
+
 };
 
 #endif
