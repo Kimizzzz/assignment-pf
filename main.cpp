@@ -153,9 +153,18 @@ int main(){
                         // checks if collide with a zombie
                         if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
                             myAlien.alienYPos = myAlien.alienYPos + 2;
+
+                            // gets which zombie the alien crashed into
+                            int zombieNum = Board::checkZombie(myAlien.alienXPos, myAlien.alienYPos - 2) - '0';
+
+                            // deducts the zombies health accordingly
+                            int newZombieLife = deductZombieHealth(myAlien.attack, zombie[zombieNum].life);
+                            zombie[zombieNum].life = newZombieLife;
                             cout << endl;
                             indent3();
-                            cout << "Crashes!!" << endl;
+                            cout << "Alien crashes into Zombie " << zombieNum << endl;
+                            indent3();
+                            cout << "Zombie " << zombieNum << " lost " << myAlien.attack << " life" << endl;
                             cout << endl;
                             indent3();
                             system("pause");
@@ -174,9 +183,18 @@ int main(){
                         // checks if collide with a zombie
                         if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
                             myAlien.alienYPos = myAlien.alienYPos - 2;
+
+                            // gets which zombie the alien crashed into
+                            int zombieNum = Board::checkZombie(myAlien.alienXPos, myAlien.alienYPos + 2) - '0';
+
+                            // deducts the zombies health accordingly
+                            int newZombieLife = deductZombieHealth(myAlien.attack, zombie[zombieNum].life);
+                            zombie[zombieNum].life = newZombieLife;
                             cout << endl;
                             indent3();
-                            cout << "Crashes!!" << endl;
+                            cout << "Alien crashes into Zombie " << zombieNum << endl;
+                            indent3();
+                            cout << "Zombie " << zombieNum << " lost " << myAlien.attack << " life" << endl;
                             cout << endl;
                             indent3();
                             system("pause");
@@ -191,9 +209,18 @@ int main(){
                         // checks if collide with a zombie
                         if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
                             myAlien.alienXPos = myAlien.alienXPos + 4;
+
+                             // gets which zombie the alien crashed into
+                            int zombieNum = Board::checkZombie(myAlien.alienXPos - 4, myAlien.alienYPos) - '0';
+
+                            // deducts the zombies health accordingly
+                            int newZombieLife = deductZombieHealth(myAlien.attack, zombie[zombieNum].life);
+                            zombie[zombieNum].life = newZombieLife;
                             cout << endl;
                             indent3();
-                            cout << "Crashes!!" << endl;
+                            cout << "Alien crashes into Zombie " << zombieNum << endl;
+                            indent3();
+                            cout << "Zombie " << zombieNum << " lost " << myAlien.attack << " life" << endl;
                             cout << endl;
                             indent3();
                             system("pause");
@@ -209,9 +236,18 @@ int main(){
                         // checks if collide with a zombie
                         if(Board::checkBoard(myAlien.alienXPos, myAlien.alienYPos)){
                             myAlien.alienXPos = myAlien.alienXPos - 4;
+
+                             // gets which zombie the alien crashed into
+                            int zombieNum = Board::checkZombie(myAlien.alienXPos + 4, myAlien.alienYPos) - '0';
+
+                            // deducts the zombies health accordingly
+                            int newZombieLife = deductZombieHealth(myAlien.attack, zombie[zombieNum].life);
+                            zombie[zombieNum].life = newZombieLife;
                             cout << endl;
                             indent3();
-                            cout << "Crashes!!" << endl;
+                            cout << "Alien crashes into Zombie " << zombieNum << endl;
+                            indent3();
+                            cout << "Zombie " << zombieNum << " lost " << myAlien.attack << " life" << endl;
                             cout << endl;
                             indent3();
                             system("pause");

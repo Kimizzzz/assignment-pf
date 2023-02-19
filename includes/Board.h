@@ -40,6 +40,8 @@ class Board{
         static void alienTrail(int, int);
         void resetBoard();
 
+        static int checkZombie(int, int);
+
 };
 #endif
 

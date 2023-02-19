@@ -44,6 +44,8 @@ void zombieMessageX(int, int, int);
 
 void zombieMessageY(int, int, int);
 
+int deductZombieHealth(int, int);
+
 
 
 #endif

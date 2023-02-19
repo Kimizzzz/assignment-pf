@@ -138,8 +138,8 @@ char Board::createBoard(int n[][2], int zombieCount){
                                         gameBoard[i][j] = alienPos();
                                     }else{
                                         if((floor(res) + 0.5) == res){
-                                            // gameBoard[i][j] = randomBool();
-                                            gameBoard[i][j] = Game_Object::empty();
+                                            gameBoard[i][j] = randomBool();
+                                            // gameBoard[i][j] = Game_Object::empty();
                                         }else{
                                             gameBoard[i][j] = Game_Object::empty();
                                         }
@@ -305,8 +305,8 @@ void Board::alienTrail(int alienXPos, int alienYPos){ // draws new alien pos and
         for(int j = 1; j <= column; j++){
 
             if(gameBoard[i][j] == 'A'){
-                gameBoard[i][j] = Game_Object::empty();
-                // gameBoard[i][j] = Game_Object::trail();
+                // gameBoard[i][j] = Game_Object::empty();
+                gameBoard[i][j] = Game_Object::trail();
             }
             
             if(i == alienYPos && j == alienXPos){
@@ -325,3 +325,31 @@ void Board::resetBoard(){
         }
     }
 }
+
+
+int Board::checkZombie(int xPos, int yPos){
+    int gameBoardRow = stoi(boardRowCount());
+    int gameBoardColumn = stoi(boardColumnCount());
+
+    int row = (gameBoardRow * 2) + 1;
+    int column = (gameBoardColumn * 4) + 1;
+
+    char zombieNum = gameBoard[yPos][xPos];
+
+    // for(int i = 1; i <= row; i++){
+    //     for(int j = 1; j <= column; j++){
+
+            
+
+    //     }
+    // }
+
+    return zombieNum;
+}
+
+
+
+
+
+
+

@@ -186,3 +186,10 @@ void zombieMessageY(int newYPos, int oriYPos, int i){
         cout << "Zombie " << i << " did not move";
     }
 }
+
+
+
+int deductZombieHealth(int alienAttack, int zombieHealth){
+    return zombieHealth - alienAttack;
+}
+

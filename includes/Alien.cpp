@@ -23,7 +23,7 @@ Alien::Alien(int xCenter, int yCenter){
 
     // set life and attack to random values between 1 and 100
     life = rand() % 100 + 1;
-    attack = 0;
+    attack = 20;
     
     // sets Alien x position and Y position
     alienXPos = xCenter;

@@ -16,10 +16,10 @@ class Alien;
 
 class Zombie {
     private:
-        int life;
         int attack;
         int range;
     public:
+        int life;
         int xPos;
         int yPos;
         Zombie(); // Default constructor
