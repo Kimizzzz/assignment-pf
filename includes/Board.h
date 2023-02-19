@@ -36,6 +36,9 @@ class Board{
 
         void updateZombiePos(int, int, char);
 
+        static void alienTrail(int, int);
+        void resetBoard();
+
 };
 #endif
 

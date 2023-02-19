@@ -262,3 +262,36 @@ void Board::updateZombiePos(int xPos, int yPos, char zombieChar){
     }
 }
 
+
+
+void Board::alienTrail(int alienXPos, int alienYPos){ // draws new alien pos and alien trail
+
+    int gameBoardRow = stoi(boardRowCount());
+    int gameBoardColumn = stoi(boardColumnCount());
+
+    int row = (gameBoardRow * 2) + 1;
+    int column = (gameBoardColumn * 4) + 1;
+
+    for(int i = 1; i <= row; i++){
+        for(int j = 1; j <= column; j++){
+
+            if(gameBoard[i][j] == 'A'){
+                gameBoard[i][j] = Game_Object::trail();
+            }
+            
+            if(i == alienYPos && j == alienXPos){
+                gameBoard[i][j] = 'A';
+            }
+        }
+    }
+}
+
+void Board::resetBoard(){
+    for(int i = 1; i <= row; i++){
+        for(int j = 1; j <= column; j++){
+            if(gameBoard[i][j] == Game_Object::trail()){
+                gameBoard[i][j] = randomBool();
+            }
+        }
+    }
+}
