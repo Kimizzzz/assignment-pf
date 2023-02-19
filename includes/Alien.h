@@ -13,6 +13,7 @@
 
 #include <random>
 #include <string>
+#include "Zombie.h"
 using namespace std;
 
 class Alien {
