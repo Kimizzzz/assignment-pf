@@ -10,7 +10,6 @@
 
 List all the features completed.
 
-<<<<<<< HEAD
 1. Created the main menu and settings menu
 2. Created option for players to change game board dimension
 3. Created option for players to change the zombie count
@@ -22,11 +21,9 @@ List all the features completed.
 9. Create game flow
 10. Make characters movement
 11. Make game objects have its attributes
-=======
-1. Added alien movement
-2. Added zombie movement
-3. Made a win lose condition
->>>>>>> 8100668bf644a4022c3a9bf20b5cfb2f401bc0b6
+12. Added alien movement
+13. Added zombie movement
+14. Made a win lose condition
 
 ### To Do
 
@@ -45,7 +42,6 @@ List down the contribution of each group members.
 
 ### Muhammad Azhan Hakimi Bin Zulhani
 
-<<<<<<< HEAD
 1. Settings
 2. Game board
 3. Game objects
@@ -57,8 +53,6 @@ List down the contribution of each group members.
 2. Zombie's attributes and number
 3. Movement of zombie and alien
 
-### Muhammad Ismail Bin Suhaini
-=======
 ### Muhammad Azhan Hakimi Bin Zulhani
 
 1. Made alien movement
@@ -71,8 +65,8 @@ List down the contribution of each group members.
 2. create a function on what will happen if alien hit a health pod
 3. create a function on what will happen if alien hit a arrow
 4. Make zombie able to attack alien when in range
->>>>>>> 8100668bf644a4022c3a9bf20b5cfb2f401bc0b6
 
+### Muhammad Ismail Bin Suhaini
 1. Game controls
 2. Save, load and quit functions
 
