@@ -74,4 +74,15 @@ void quitGameDisplay(){
 };
 
 
+// display when the game is over
 
+void gameOverDisplay(){
+    indent3();
+    cout << "    =-----------------------------=" << endl;
+    indent3();
+    cout << "    |       Game Over,            |" << endl;
+    indent3();
+    cout << "    |           You Lose          |" << endl;
+    indent3();
+    cout << "    =-----------------------------=" << endl;
+}

@@ -253,11 +253,33 @@ int main(){
 
                     }
                     cout << endl << endl;
+
+                    ////////////////////////////////////////
+                    // zombie checks if it can attack alien
+                    zombie[i].attackAlien(myAlien, ch);
+
+
+                    ////////////////////////////////////////
+
+
+                    ////////////////////////////////////////
+                    // checks if alien is still alive
+                    if(myAlien.life <= 0){
+                        gameOver = true;
+
+                        gameOverDisplay();
+
+                        break;
+                    }
+                    //////////////////////////////////////// 
+
                     indent3();
                     system("pause");
                 }
             }
-            break;
+            cout << endl;
+
+            system("pause");
         }
         else if(choice == 2){ // settings
             clearScreen();

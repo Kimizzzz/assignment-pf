@@ -160,13 +160,19 @@ int Zombie::randomYChange(int xPosition, int yPosition, int alienXPos, int alien
     return yPosition;
 }
 
-void Zombie::attackAlien(Alien& alien) {
+void Zombie::attackAlien(Alien& alien, char zombieChar) {
     int distance = std::sqrt(std::pow(alien.alienXPos - xPos, 2) + std::pow(alien.alienYPos - yPos, 2));
     if (distance <= range) {
-        std::cout << "Zombie attacks Alien!" << std::endl;
+        cout << endl;
+        indent3();
+        std::cout << "Zombie " << zombieChar << " attacks Alien!" << std::endl;
+        cout << endl;
         alien.setLife(alien.getLife() - attack);
         if (alien.getLife() <= 0) {
+            cout << endl;
+            indent3();
             std::cout << "Alien has died." << std::endl;
+            cout << endl;
         }
     }
 }

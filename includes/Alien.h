@@ -18,12 +18,12 @@ using namespace std;
 
 class Alien {
     private:
-        int life;
-        int attack;
         std::default_random_engine generator;
         std::uniform_int_distribution<int> distribution;
 
     public:
+        int life;
+        int attack;
         int alienXPos;
         int alienYPos;
         Alien(int, int); // constructor

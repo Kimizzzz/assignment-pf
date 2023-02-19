@@ -19,6 +19,8 @@ void settingsDisplay();
 
 void quitGameDisplay();
 
+void gameOverDisplay();
+
 
 #endif
 

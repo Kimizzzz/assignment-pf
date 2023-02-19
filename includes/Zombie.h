@@ -36,7 +36,7 @@ class Zombie {
         static int randomXChange(int, int, int, int, int[], int[]);
         static int randomYChange(int, int, int, int, int[], int[]);
 
-        void attackAlien(Alien& alien); // Function to attack an Alien
+        void attackAlien(Alien& alien, char); // Function to attack an Alien
         
 };
 
