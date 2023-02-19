@@ -30,6 +30,10 @@ class Zombie {
         int getAttack();
         int getRange();
         void displayZombieAttributes(int);
+
+        static int getRandomAxisMovement();
+        static int randomXChange(int, int, int, int, int[], int[]);
+        static int randomYChange(int, int, int, int, int[], int[]);
         
 };
 

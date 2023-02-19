@@ -245,3 +245,20 @@ void Board::updateBoard(int alienXPos, int alienYPos){
         }
     }
 }
+
+
+void Board::updateZombiePos(int xPos, int yPos, char zombieChar){
+    for(int i = 1; i <= row; i++){
+        for(int j = 1; j <= column; j++){
+
+            if(gameBoard[i][j] == zombieChar){
+                gameBoard[i][j] = Game_Object::empty();
+            }
+            
+            if(i == yPos && j == xPos){
+                gameBoard[i][j] = zombieChar;
+            }
+        }
+    }
+}
+

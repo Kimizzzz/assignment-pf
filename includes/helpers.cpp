@@ -165,3 +165,24 @@ int setZombiePos(int arr[][2], int zombieCount, int gameBoardRow, int gameBoardC
     }    
     return arr[zombieCount][2];
 }
+
+
+void zombieMessageX(int newXPos, int oriXPos, int i){
+    if(newXPos > oriXPos){
+        cout << "Zombie " << i << " moved to the right";
+    }else if(newXPos < oriXPos){
+        cout << "Zombie " << i << " moved to the left";
+    }else{
+        cout << "Zombie " << i << " did not move";
+    }
+}
+
+void zombieMessageY(int newYPos, int oriYPos, int i){
+    if(newYPos > oriYPos){
+        cout << "Zombie " << i << " moved down";
+    }else if(newYPos < oriYPos){
+        cout << "Zombie " << i << " moved up";
+    }else{
+        cout << "Zombie " << i << " did not move";
+    }
+}

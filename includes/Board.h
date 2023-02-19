@@ -34,6 +34,8 @@ class Board{
         char alienPos();
         char zombiePos();
 
+        void updateZombiePos(int, int, char);
+
 };
 #endif
 

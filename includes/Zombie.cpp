@@ -64,3 +64,99 @@ void Zombie::displayZombieAttributes(int number){
     cout << "Column: " << (xPos + 1) / 4 << endl;
     cout << endl;
 }
+
+
+int Zombie::getRandomAxisMovement(){
+    int choice = rand() % 2 + 1;
+    return choice;
+}
+
+int Zombie::randomXChange(int xPosition, int yPosition, int alienXPos, int alienYPos, int xArr[], int yArr[]){
+    int choice;
+
+    int randomInteger = rand() % 2 + 1;
+
+    choice = randomInteger;
+
+    int gameBoardRow = stoi(boardRowCount());
+    int gameBoardColumn = stoi(boardColumnCount());
+
+    int yLimit = (gameBoardRow * 2) + 1;
+    int xLimit = (gameBoardColumn * 4) + 1;
+
+    const int zombieCount = stoi(getZombieCount());
+
+    if(choice == 1){
+        xPosition  = xPosition + 4;
+        for(int i = 0; i < zombieCount; i++){
+            if((xPosition == xArr[i]) && (yPosition == yArr[i])){
+                xPosition = xPosition - 4;
+                goto end;
+            }
+        }
+        if(xPosition <= 0 || xPosition >= xLimit || ((xPosition == alienXPos) && (yPosition == alienYPos))){
+            xPosition = xPosition - 4;
+        }
+    }
+    else if(choice == 2){
+        xPosition  = xPosition - 4;
+        for(int i = 0; i < zombieCount; i++){
+            if((xPosition == xArr[i]) && (yPosition == yArr[i])){
+                xPosition = xPosition + 4;
+                goto end;
+            }
+        }
+        if(xPosition <= 0 || xPosition >= xLimit || ((xPosition == alienXPos) && (yPosition == alienYPos))){
+            xPosition = xPosition + 4;
+        }
+    }
+    
+    end:
+    return xPosition;
+}
+
+int Zombie::randomYChange(int xPosition, int yPosition, int alienXPos, int alienYPos, int xArr[], int yArr[]){
+    int choice;
+
+    int randomInteger = rand() % 2 + 1;
+
+    choice = randomInteger;
+
+    int gameBoardRow = stoi(boardRowCount());
+    int gameBoardColumn = stoi(boardColumnCount());
+
+    int yLimit = (gameBoardRow * 2) + 1;
+    int xLimit = (gameBoardColumn * 4) + 1;
+
+    const int zombieCount = stoi(getZombieCount());
+
+    if(choice == 1){
+        yPosition  = yPosition + 2;
+        for(int i = 0; i < zombieCount; i++){
+            if((xPosition == xArr[i]) && (yPosition == yArr[i])){
+                yPosition = yPosition - 2;
+                goto end;
+            }
+        }
+        if(yPosition <= 0 || yPosition >= yLimit || ((xPosition == alienXPos) && (yPosition == alienYPos))){
+            yPosition = yPosition - 2;
+        }
+    }
+    else if(choice == 2){
+        yPosition  = yPosition - 2;
+        for(int i = 0; i < zombieCount; i++){
+            if((xPosition == xArr[i]) && (yPosition == yArr[i])){
+                yPosition = yPosition + 2;
+                goto end;
+            }
+        }
+        if(yPosition <= 0 || yPosition >= xLimit || ((xPosition == alienXPos) && (yPosition == alienYPos))){
+            yPosition = yPosition + 2;
+        }
+    }
+
+    end:
+    return yPosition;
+}
+
+

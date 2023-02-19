@@ -40,6 +40,10 @@ string prompt();
 
 int setZombiePos(int arr[][2], int, int, int);
 
+void zombieMessageX(int, int, int);
+
+void zombieMessageY(int, int, int);
+
 
 
 #endif

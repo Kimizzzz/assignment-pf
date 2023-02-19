@@ -64,7 +64,7 @@ int main(){
             Alien myAlien(newGameBoard.xCenter, newGameBoard.yCenter);
 
             // creates an array of Zombie class instances
-            Zombie zombie[zombieCount];
+            Zombie zombie[zombieCount + 1];
             for(int i = 1; i < zombieCount + 1; i++)
             {
                 zombie[i];
@@ -112,7 +112,109 @@ int main(){
                     zombie[i].displayZombieAttributes(i);
                 }
             }
-            cout << endl;
+            // enters the game
+            
+            bool gameOver = false;
+            while(!gameOver){
+
+                clearScreen();
+
+                cout << endl;
+            
+                // draws the final gameboard
+                newGameBoard.drawBoard();
+                
+                cout << endl;
+
+                // displays Alien attributes
+                myAlien.displayAlienAttributes();
+
+                cout << endl;
+                
+                // displays zombie attributes
+                for(int i = 1; i < zombieCount + 1; i++){
+                    for(int j = 0; j < 1; j++){
+                        zombie[i].displayZombieAttributes(i);
+                    }
+                }
+                cout << endl;
+
+                // alien moves
+                indent3();
+                cout << "Alien has moved" << endl;
+                cout << endl;
+                indent3();
+                system("pause");
+                cout << endl;
+                // code to make alien move goes here, to be added
+
+
+                // zombie takes turn moving
+
+                for(int i = 1; i < zombieCount + 1; i++){
+
+                    int myArrX[zombieCount];
+                    for(int i = 0; i < zombieCount; i++){
+                        myArrX[i] = zombie[i + 1].xPos;
+                    }
+
+                    int myArrY[zombieCount];
+                    for(int i = 0; i < zombieCount; i++){
+                        myArrY[i] = zombie[i + 1].yPos;
+                    }
+
+                    int alienXPos = myAlien.alienXPos;
+                    int alienYPos = myAlien.alienYPos;
+
+                    char ch = '0' + i;
+                    
+                    int axis = Zombie::getRandomAxisMovement();  // determined what axis the zombie will move, X or Y
+
+                    int oriX = zombie[i].xPos;
+                    int oriY = zombie[i].yPos;
+
+                    if(axis == 1){ // zombie moves along the X axis
+                        clearScreen();
+                        zombie[i].xPos = Zombie::randomXChange(zombie[i].xPos, zombie[i].yPos, alienXPos, alienYPos, myArrX, myArrY);  // moves the zombie left, right or no movement
+                        newGameBoard.updateZombiePos(zombie[i].xPos, zombie[i].yPos, ch);  // updates the new zombie position to the gameboard
+                        cout << endl;
+                        newGameBoard.drawBoard(); // draws the gameboard
+                        cout << endl;
+                        myAlien.displayAlienAttributes(); // displays alien attributes
+                        cout << endl;
+                        for(int i = 1; i < zombieCount + 1; i++){ // displays zombie attributes
+                            for(int j = 0; j < 1; j++){
+                                zombie[i].displayZombieAttributes(i);
+                            }
+                        }
+                        cout << endl;
+                        indent3();
+                        zombieMessageX(zombie[i].xPos, oriX, i);  // prints out message about where the zombie has moved
+                        
+                    }else if(axis == 2){ // zombie moves along the Y axis
+                        clearScreen();
+                        zombie[i].yPos = Zombie::randomYChange(zombie[i].xPos, zombie[i].yPos,alienXPos, alienYPos, myArrX, myArrY);  // moves the zombie up, down or no movement
+                        newGameBoard.updateZombiePos(zombie[i].xPos, zombie[i].yPos, ch);  // updates the new zombie position to the gameboard
+                        cout << endl;
+                        newGameBoard.drawBoard();  // draws the gameboard
+                        cout << endl;
+                        myAlien.displayAlienAttributes();  // displays alien attributes
+                        cout << endl;
+                        for(int i = 1; i < zombieCount + 1; i++){  // displays zombie attributes
+                            for(int j = 0; j < 1; j++){
+                                zombie[i].displayZombieAttributes(i);
+                            }
+                        }
+                        cout << endl;
+                        indent3();
+                        zombieMessageY(zombie[i].yPos, oriY, i);  // prints out message where the zombie has moved
+
+                    }
+                    cout << endl << endl;
+                    indent3();
+                    system("pause");
+                }
+            }
             break;
         }
         else if(choice == 2){ // settings
