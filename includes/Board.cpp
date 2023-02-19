@@ -59,6 +59,10 @@ char getRandomObject(){
     return gameObject;
 }
 
+/*void Board::setRandomObject(int x, int y, char object)
+{
+    gameBoard[gameboardRows -row][column - 1] = object;
+}*/
 
 // this generates a random bool, 1/0 which is used to determine if a particular tile on the board will have a game object or not
 

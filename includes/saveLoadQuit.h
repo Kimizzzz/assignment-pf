@@ -11,6 +11,10 @@
 #ifndef SAVELOADQUIT
 #define SAVELOADQUIT
 
+void saveGame();
+
+void loadGame();
+
 bool quitGame();
 
 #endif

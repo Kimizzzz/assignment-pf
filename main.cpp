@@ -17,6 +17,7 @@
 #include "includes/Alien.h"
 #include "includes/Board.h"
 #include "includes/Zombie.h"
+#include "includes/saveLoadQuit.h"
 
 using namespace std;
 
@@ -146,6 +147,7 @@ int main(){
 
                 // receives player command
 
+                pickChoice:
                 string choice = prompt();
                 if(choice == "up"){
                     int yLimit = (gameBoardRow * 2) + 1;
@@ -308,8 +310,83 @@ int main(){
                         }
                         Board::alienTrail(myAlien.alienXPos, myAlien.alienYPos);
                     }
-                    
-                }else{
+                                } 
+                /*else if (choice == "arrow")
+                 {
+                    int x, y;
+                    char arrow;
+                     cout << "Enter row, column and direction: " << endl;
+                     cin >> x >> y >> arrow;
+
+                     newGameBoard.setRandomObject(x, y, arrow);
+
+                 }*/
+                else if (choice == "help")
+                {
+                    cout << endl;
+                    indent6();
+                    cout << "    =-----------------------------=" << endl;
+                    indent6();
+                    cout << "    |       List of Commands      |" << endl;
+                    indent6();
+                    cout << "    =-----------------------------=" << endl;
+                    cout << endl;
+                    indent3();
+                    cout << "up    - Alien to move up" << endl;
+                    indent3();
+                    cout << "down  - Alien to move down" << endl;
+                    indent3();
+                    cout << "left  - Alien to move left" << endl;
+                    indent3();
+                    cout << "right - Alien to move right" << endl;
+                    indent3();
+                    cout << "arrow - Switch the direction of an arrow object in the game board(The player will be asked to enter the row and column of the arrow object to switch, followed by the direction of the arrow object to switch to)" << endl;
+                    indent3();
+                    cout << "help  - List and describe the commands that the player can use in the game" << endl;
+                    indent3();
+                    cout << "save  - Save the current game to a file(The player will be asked to enter the name of the file to save to)" << endl;
+                    indent3();
+                    cout << "load  - Load a saved game from a file(The player will be asked to enter the name of the file to load from)" << endl;
+                    indent3();
+                    cout << "quit  - Quit the game while still in play(The player will be asked to confirm his/her decision)" << endl;
+                    cout << endl;
+                    indent3();
+
+                    system("pause");
+
+                    clearScreen();
+                    cout << endl;
+
+                    newGameBoard.drawBoard();
+                    cout << endl;
+
+                    myAlien.displayAlienAttributes();
+                    cout << endl;
+
+                    for (int i = 1; i < zombieCount + 1; i++)
+                    {
+                        for (int j = 0; j < 1; j++)
+                        {
+                            zombie[i].displayZombieAttributes(i);
+                        }
+                        goto pickChoice;
+                    }
+                    cout << endl;
+                } 
+                /*else if(choice == "save")
+                    {
+                     saveGame();
+                    }*/
+                 else if(choice == "load")
+                 {
+                     loadGame();
+                 }
+                else if (choice == "quit")
+                {
+                    quitGame();
+                    break;
+                } 
+                else{
                     gameOver = true;
                     break;
                 }

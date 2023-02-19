@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-[Video Demo](https://youtube.com).
+[Video Demo](https://youtu.be/rDMuaKK11bU).
 
 ## Minimum Requirements
 
@@ -10,42 +10,52 @@
 
 List all the features completed.
 
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Created the main menu and settings menu
+2. Created option for players to change game board dimension
+3. Created option for players to change the zombie count
+4. Able to create the game board with the game objects 
+5. Developing game character with their attributes
+6. Able to make Alien class
+7. Able to make Zombie class
+8. Able to make quit function
+9. Create game flow
+10. Make characters movement
+11. Make game objects have its attributes
 
 ### To Do
 
 List all the features not yet done. Remove this section if there is no incomplete requirements.
 
-1. Cool Feature #1
-2. *add more*
+1. Change arrows direction
+2. Save, load and quit functions
 
 ## Additional Features
 
-Describe the additional features that has been implemented.
+None
 
 ## Contributions
 
 List down the contribution of each group members.
 
-For example:
+### Muhammad Azhan Hakimi Bin Zulhani
 
-### Tony Stark
+1. Settings
+2. Game board
+3. Game objects
+4. Game flow
 
-1. Randomly generate game board.
-2. *add more*
+### Syed Thahir Alhabshi Bin Sayed Ahmad
 
-### Steve Rogers
+1. Game characters
+2. Zombie's attributes and number
+3. Movement of zombie and alien
 
-1. Zombie movement and attack behaviour.
-2. *add more*
+### Muhammad Ismail Bin Suhaini
 
-### Dr. Strange
-
-1. Implement all game objects.
-2. *add more*
+1. Game controls
+2. Save, load and quit functions
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+1. Didn't manage to change the arrow direction. Didnt have enough time to solve it.
+2. Didn't manage to save, load and quit the game properly. Didnt have enough time to solve it.

@@ -43,6 +43,7 @@ class Board{
         static int checkZombie(int, int);
 
         static void removeZombie(int zombieNum);
+        void setRandomObject(int x, int y, char arrow);
 
 };
 #endif

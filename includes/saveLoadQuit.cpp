@@ -9,94 +9,93 @@
 // *************************************************************************************************************
 
 #include <iostream>
-#include <conio.h>
 #include <fstream>
 
 #include "helpers.h"
-//#include "Board.h"
+#include "display.h"
 
 using namespace std;
 
-char input;
-
-//Initialise FileIO
-ofstream outStream;
-ifstream inStream;
-
-//Array containing current game state
-//string currentGameState[20];
-
-//Returns a boolean specifying if the user wants to quit or not.
-bool quitGame()
-{
-	clearScreen();
-	cout << "Are you sure you want to quit? (Y/N) \n";
-	
-	input = _getch();
-
-	if (input == 'y' || input == 'Y')
-	{
-		clearScreen();
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+// asking the user whether if he/she want to save the game or not
 
 /*void saveGame()
 {
-	cout << "Save game? This will overwrite any previous saves. (Y/N)" << endl;
+	cout << "Enter the file name to save the game to(fileName.txt): ";
+	cin >> fileName;
 
-	input = _getch();
-
-	if (input == 'y' || input == 'Y')
+	ofstream saveFile;
+	saveFile.open(fileName);
+	if (saveFile.is_open())
 	{
-		outStream.open("save.txt");
+		saveFile << ;
+		saveFile << ;
 
-		if (outStream.fail())
-		{
-			cout << "Error Saving" << endl;
-		}
+		saveFile.close();
 
-		for (int i = 0; i < 20; i++)
-		{
-			outStream << currentGameState[i] << endl;
-		}
-
-		outStream <<  << endl;
-
-		outStream.close();
-
+		cout << "Game Saved";
 	}
+	system("pause");
+}*/
 
-	clearScreen();
+// loads the game from the saved file
+
+void loadGame()
+{
+	char choice;
+
+	cout << "Do you want to save the game?(y/n): ";
+	cin >> choice;
+
+	if(choice == 'y')
+	{
+		void saveGame();
+	}
+	else
+	{	
+		resetDisplay();
+		clearScreen();
+		string fileName;
+
+		cout << "Enter the file name to load the game from(fileName.txt): ";
+		cin >> fileName;
+
+		ifstream loadFile;
+		loadFile.open(fileName);
+		if (loadFile.is_open())
+		{
+			string line;
+
+			while(getline(loadFile, line))
+			{
+				cout << line << endl;
+			}
+			loadFile.close();
+
+			cout << "Game Loaded" << endl;
+		}
+		system("pause");
+	}
 }
 
-void loadGameFromSave()
+// asking the user whether if he/she want to quit the game or not
+
+bool quitGame()
 {
-	//Open text file, check for errors.
-	string save = "save.txt";
-	inStream.open(save);
-	if (inStream.fail())
+	char choice;
+	cout << "Are you sure you want to quit the game?(y/n): ";
+	cin >> choice;
+
+	if (choice == 'y')
 	{
-		//Convert to C-String to comply with perror function parameters.
-		const char * fileCString = save.c_str();
-		perror(fileCString);
-		cout << endl;
-		return;
+		bool flag = true;
+		resetDisplay();
+		clearScreen();
+		flag = false;
 	}
-
-	//Load game state
-	string line;
-	for (int x = 0; x < 20; x++)
+	else
 	{
-		getline(inStream, line);
-		currentGameState[x] = line;
+		// returns to the game
 	}
-
-	inStream.close();
-
-	displayAlienAttributes(currentGameState)
-}*/
+	resetDisplay();
+	return 0;
+}
