@@ -9,6 +9,7 @@
 // *************************************************************************************************************
 
 #include "Alien.h"
+#include "Zombie.h"
 #include <cstdlib> // for rand() and srand()
 #include <ctime> // for time()
 #include <iostream>
@@ -58,6 +59,14 @@ void Alien::displayAlienAttributes() {
     cout << "Alien's Attack: " << attack << endl;
 }
 
+
+void Alien::receiveAttack(Zombie& zombie) {
+    int distance = abs(alienXPos - zombie.xPos) + abs(alienYPos - zombie.yPos);
+    if (distance <= zombie.getRange()) {
+        life -= zombie.getAttack();
+    }
+}
+
 int Alien::alienUpMove(int yPos){
     yPos = yPos - 2;
     return yPos;
@@ -77,3 +86,4 @@ int Alien::alienRightMove(int xPos){
     xPos = xPos + 4;
     return xPos;
 }
+

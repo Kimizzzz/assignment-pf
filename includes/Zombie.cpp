@@ -10,6 +10,7 @@
 
 #include "Zombie.h"
 #include "Board.h"
+#include "Alien.h"
 #include "helpers.h"
 #include <iostream>
 
@@ -158,5 +159,17 @@ int Zombie::randomYChange(int xPosition, int yPosition, int alienXPos, int alien
     end:
     return yPosition;
 }
+
+void Zombie::attackAlien(Alien& alien) {
+    int distance = std::sqrt(std::pow(alien.alienXPos - xPos, 2) + std::pow(alien.alienYPos - yPos, 2));
+    if (distance <= range) {
+        std::cout << "Zombie attacks Alien!" << std::endl;
+        alien.setLife(alien.getLife() - attack);
+        if (alien.getLife() <= 0) {
+            std::cout << "Alien has died." << std::endl;
+        }
+    }
+}
+
 
 

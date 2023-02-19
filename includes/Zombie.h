@@ -12,6 +12,7 @@
 #define ZOMBIE_H
 
 class Board;
+class Alien;
 
 class Zombie {
     private:
@@ -34,6 +35,8 @@ class Zombie {
         static int getRandomAxisMovement();
         static int randomXChange(int, int, int, int, int[], int[]);
         static int randomYChange(int, int, int, int, int[], int[]);
+
+        void attackAlien(Alien& alien); // Function to attack an Alien
         
 };
 
